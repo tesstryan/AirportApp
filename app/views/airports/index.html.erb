@@ -1,0 +1,20 @@
+<h1>Airport Schedules</h1>
+
+<% @airport.each do |airport_code| %>
+<% airport = Airport.new %>
+<% airport.code = airport_code[:code] %>
+<h2><%= link_to airport.code, show_url(airport.code) %></h2>
+
+<p><%= airport.temperature%>&degF</p>
+
+<p><%if airport.delay > 15 %>
+  <%= "Nightmare" %>
+  <% end %></p>
+
+<p> <%if airport.delay < 15 %>
+  <%= "On-time"  %>
+  <% end %></p>
+
+<% end %>
+
+

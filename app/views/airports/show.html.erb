@@ -1,0 +1,17 @@
+<h1>Airport Schedule</h1>
+
+<% airport = Airport.new %>
+<% airport.code = params[:id] %>
+<h2><%= airport.code %></h2>
+
+<p><%= airport.temperature%>&degF</p>
+
+<p><%if airport.delay > 15 %>
+  <%= "Nightmare" %>
+  <% end %></p>
+
+<p> <%if airport.delay < 15 %>
+  <%= "On-time"  %>
+  <% end %></p>
+
+<%= link_to "Back to Homepage", airports_url %>
